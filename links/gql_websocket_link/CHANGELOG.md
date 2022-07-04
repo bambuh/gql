@@ -1,3 +1,11 @@
+## 0.3.3
+
+- Expose `connectionStateStream` getter on `WebSocketLink`.
+
+## 0.3.2
+
+- Upgrade `gql_exec`.
+
 ## 0.3.1
 
 - Close [227](https://github.com/gql-dart/gql/issues/227).

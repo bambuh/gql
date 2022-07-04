@@ -1,6 +1,5 @@
 // ignore_for_file: implicit_dynamic_method, unused_local_variable,implicit_dynamic_map_literal
 
-import "dart:async";
 import "dart:core";
 
 import "package:collection/collection.dart";
@@ -94,6 +93,7 @@ void main() {
           Response(
             data: const <String, dynamic>{},
             errors: null,
+            response: const <String, dynamic>{"data": <String, dynamic>{}},
             context: Context()
                 .withEntry(
                   ResponseExtensions(null),
@@ -445,6 +445,22 @@ void main() {
                 ],
               ),
             ],
+            response: const <String, dynamic>{
+              "data": <String, dynamic>{},
+              "errors": <Map<String, dynamic>>[
+                <String, dynamic>{
+                  "message": "Execution error",
+                  "path": <dynamic>["friends", 0, "name"],
+                  "extensions": <String, dynamic>{},
+                  "locations": <Map<String, dynamic>>[
+                    <String, dynamic>{
+                      "line": 1,
+                      "column": 1,
+                    },
+                  ],
+                },
+              ],
+            },
             context: Context()
                 .withEntry(
                   ResponseExtensions(null),
@@ -507,6 +523,11 @@ void main() {
               "something": "random text 55656",
             },
             errors: null,
+            response: const <String, dynamic>{
+              "data": <String, dynamic>{
+                "something": "random text 55656",
+              }
+            },
             context: Context().withEntry(
               ResponseExtensions(null),
             ),
@@ -626,6 +647,7 @@ void main() {
           Response(
               data: null,
               errors: null,
+              response: response.data as Map<String, dynamic>,
               context: Context().withEntry(
                 ResponseExtensions(null),
               )),
